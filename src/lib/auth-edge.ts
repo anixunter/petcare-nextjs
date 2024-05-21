@@ -16,7 +16,7 @@ export const nextAuthEdgeConfig = {
       }
 
       if (isLoggedIn && isTryingToAccessApp && !auth?.user.hasAccess) {
-        return Response.redirect(new URL("/", request.nextUrl));
+        return Response.redirect(new URL("/payment", request.nextUrl));
       }
 
       if (isLoggedIn && auth?.user.hasAccess) {
@@ -37,7 +37,7 @@ export const nextAuthEdgeConfig = {
           request.nextUrl.pathname.includes("/login") ||
           request.nextUrl.pathname.includes("/signup")
         ) {
-          return Response.redirect(new URL("/", request.nextUrl));
+          return Response.redirect(new URL("/payment", request.nextUrl));
         }
 
         return true;
